@@ -37,7 +37,7 @@ namespace TradingCards
             this.lbTeamName = new System.Windows.Forms.Label();
             this.lbNotableStat = new System.Windows.Forms.Label();
             this.lbCardPrice = new System.Windows.Forms.Label();
-            this.pbCardValue = new System.Windows.Forms.ProgressBar();
+            this.pbCardValue = new TradingCards.CardValueBar();
             ((System.ComponentModel.ISupportInitialize)(this.pbCardImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@ namespace TradingCards
             // 
             this.lbCardType.AutoSize = true;
             this.lbCardType.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCardType.Location = new System.Drawing.Point(87, 18);
+            this.lbCardType.Location = new System.Drawing.Point(12, 9);
             this.lbCardType.Name = "lbCardType";
             this.lbCardType.Size = new System.Drawing.Size(140, 38);
             this.lbCardType.TabIndex = 0;
@@ -76,7 +76,7 @@ namespace TradingCards
             // 
             this.lbTeamName.AutoSize = true;
             this.lbTeamName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTeamName.Location = new System.Drawing.Point(99, 249);
+            this.lbTeamName.Location = new System.Drawing.Point(93, 249);
             this.lbTeamName.Name = "lbTeamName";
             this.lbTeamName.Size = new System.Drawing.Size(114, 28);
             this.lbTeamName.TabIndex = 3;
@@ -87,7 +87,7 @@ namespace TradingCards
             // 
             this.lbNotableStat.AutoSize = true;
             this.lbNotableStat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNotableStat.Location = new System.Drawing.Point(96, 296);
+            this.lbNotableStat.Location = new System.Drawing.Point(93, 296);
             this.lbNotableStat.Name = "lbNotableStat";
             this.lbNotableStat.Size = new System.Drawing.Size(122, 28);
             this.lbNotableStat.TabIndex = 4;
@@ -98,7 +98,7 @@ namespace TradingCards
             // 
             this.lbCardPrice.AutoSize = true;
             this.lbCardPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCardPrice.Location = new System.Drawing.Point(104, 324);
+            this.lbCardPrice.Location = new System.Drawing.Point(93, 324);
             this.lbCardPrice.Name = "lbCardPrice";
             this.lbCardPrice.Size = new System.Drawing.Size(100, 28);
             this.lbCardPrice.TabIndex = 5;
@@ -109,6 +109,7 @@ namespace TradingCards
             // 
             this.pbCardValue.Location = new System.Drawing.Point(62, 387);
             this.pbCardValue.Name = "pbCardValue";
+            this.pbCardValue.ProgressBarColor = System.Drawing.Color.LawnGreen;
             this.pbCardValue.Size = new System.Drawing.Size(188, 30);
             this.pbCardValue.TabIndex = 6;
             // 
@@ -132,9 +133,10 @@ namespace TradingCards
             ((System.ComponentModel.ISupportInitialize)(this.pbCardImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
-        private System.Windows.Forms.ProgressBar pbCardValue;
+        private CardValueBar pbCardValue;
 
         private System.Windows.Forms.Label lbCardPrice;
 

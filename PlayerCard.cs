@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -22,7 +23,20 @@ namespace TradingCards
             lbNotableStat.Text = player.NotableStat;
             lbCardPrice.Text = $"${player.CardPrice}";
 
+            pbCardValue.ValueChanged += CardValueBar_ValueChanged;
             pbCardValue.Value = player.CardValue;
+        }
+
+        private void CardValueBar_ValueChanged(object sender, EventArgs e)
+        {
+            if (pbCardValue.Value < 60)
+            {
+                pbCardValue.ProgressBarColor = Color.Red;
+            }
+            else
+            {
+                pbCardValue.ProgressBarColor = Color.Green;
+            }
         }
     }
 }
