@@ -7,10 +7,14 @@ namespace TradingCards
 {
     public partial class PlayerCard : Form
     {
+        public string PlayerName { get; set; }
+
         public PlayerCard(Player player)
         {
             InitializeComponent();
-            
+
+            PlayerName = player.PlayerName;
+
             BackColor = Color.FromName(player.CardColor);
             
             lbCardType.Text = player.CardType;

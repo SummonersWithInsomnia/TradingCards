@@ -13,6 +13,7 @@ namespace TradingCards
     public partial class App : Form
     {
         private Dictionary<string, Player> playerData;
+        private Dictionary<string, bool> myCardCollection;
         
         public App()
         {
@@ -71,7 +72,21 @@ namespace TradingCards
                         "Panini National Treasures", 55, "player-images/player9.jpg")
                 }
             };
-            
+
+            myCardCollection = new Dictionary<string, bool>
+            {
+                {"Kobe Bryant", false},
+                {"Michael Jordan", false},
+                {"LeBron James", false},
+                {"Stephen Curry", false},
+                {"Kevin Durant", false},
+                {"Giannis Antetokounmpo", false},
+                {"Kawhi Leonard", false},
+                {"Luka Dončić", false},
+                {"Nikola Jokić", false},
+                {"Zion Williamson", false}
+            };
+
             btnShowCard0.Click += (sender, e) => ShowCard("Kobe Bryant");
             btnShowCard1.Click += (sender, e) => ShowCard("LeBron James");
             btnShowCard2.Click += (sender, e) => ShowCard("Luka Dončić");
@@ -82,6 +97,8 @@ namespace TradingCards
             btnShowCard7.Click += (sender, e) => ShowCard("Nikola Jokić");
             btnShowCard8.Click += (sender, e) => ShowCard("Kevin Durant");
             btnShowCard9.Click += (sender, e) => ShowCard("Zion Williamson");
+
+            btnAction.Click += btnAction_Click;
         }
         
         private void ShowCard(string playerName)
@@ -96,10 +113,45 @@ namespace TradingCards
                 pCard.Controls.Clear();
                 pCard.Controls.Add(playerCard);
                 playerCard.Show();
+
+                if (myCardCollection[playerName])
+                {
+                    lbCardOwnership.Text = "Owned";
+                    btnAction.Text = "Remove Card";
+                    pCard.Controls.Add(lbCardOwnership);
+                    pCard.Controls.Add(btnAction);
+                }
+                else
+                {
+                    lbCardOwnership.Text = "Not owned";
+                    btnAction.Text = "Add Card";
+                    pCard.Controls.Add(lbCardOwnership);
+                    pCard.Controls.Add(btnAction);
+                }
             }
             else
             {
                 MessageBox.Show("Player not found");
+            }
+        }
+
+        private void btnAction_Click(object sender, EventArgs e)
+        {
+            if (pCard.Controls.Contains(lbCardOwnership) && pCard.Controls.Contains(btnAction))
+            {
+                string playerName = pCard.Controls.OfType<PlayerCard>().First().PlayerName;
+                if (myCardCollection[playerName])
+                {
+                    myCardCollection[playerName] = false;
+                    lbCardOwnership.Text = "Not owned";
+                    btnAction.Text = "Add Card";
+                }
+                else
+                {
+                    myCardCollection[playerName] = true;
+                    lbCardOwnership.Text = "Owned";
+                    btnAction.Text = "Remove Card";
+                }
             }
         }
     }

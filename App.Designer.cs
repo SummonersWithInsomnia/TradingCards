@@ -47,8 +47,12 @@ namespace TradingCards
             this.btnShowCard2 = new System.Windows.Forms.Button();
             this.btnShowCard1 = new System.Windows.Forms.Button();
             this.btnShowCard0 = new System.Windows.Forms.Button();
+            this.btnAction = new System.Windows.Forms.Button();
+            this.lbCardOwnership = new System.Windows.Forms.Label();
+            this.lbInstruction = new System.Windows.Forms.Label();
             this.pCard = new System.Windows.Forms.Panel();
             this.pCardList.SuspendLayout();
+            this.pCard.SuspendLayout();
             this.SuspendLayout();
             // 
             // pTitle
@@ -228,9 +232,46 @@ namespace TradingCards
             this.btnShowCard0.Text = "Kobe Bryant";
             this.btnShowCard0.UseVisualStyleBackColor = false;
             // 
+            // btnAction
+            // 
+            this.btnAction.BackColor = System.Drawing.Color.Moccasin;
+            this.btnAction.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnAction.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAction.Location = new System.Drawing.Point(526, 42);
+            this.btnAction.Name = "btnAction";
+            this.btnAction.Size = new System.Drawing.Size(164, 42);
+            this.btnAction.TabIndex = 0;
+            this.btnAction.Text = "Action";
+            this.btnAction.UseVisualStyleBackColor = false;
+            // 
+            // lbCardOwnership
+            // 
+            this.lbCardOwnership.AutoSize = true;
+            this.lbCardOwnership.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lbCardOwnership.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCardOwnership.Location = new System.Drawing.Point(527, 87);
+            this.lbCardOwnership.Name = "lbCardOwnership";
+            this.lbCardOwnership.Size = new System.Drawing.Size(163, 28);
+            this.lbCardOwnership.TabIndex = 1;
+            this.lbCardOwnership.Text = "lbCardOwnership";
+            this.lbCardOwnership.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbInstruction
+            // 
+            this.lbInstruction.AutoSize = true;
+            this.lbInstruction.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lbInstruction.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInstruction.Location = new System.Drawing.Point(165, 227);
+            this.lbInstruction.Name = "lbInstruction";
+            this.lbInstruction.Size = new System.Drawing.Size(480, 32);
+            this.lbInstruction.TabIndex = 0;
+            this.lbInstruction.Text = "<- Please choose a card from the left bar";
+            this.lbInstruction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pCard
             // 
             this.pCard.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pCard.Controls.Add(this.lbInstruction);
             this.pCard.Location = new System.Drawing.Point(264, 61);
             this.pCard.Name = "pCard";
             this.pCard.Size = new System.Drawing.Size(702, 519);
@@ -254,8 +295,11 @@ namespace TradingCards
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trading Cards";
             this.pCardList.ResumeLayout(false);
+            this.pCard.ResumeLayout(false);
+            this.pCard.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Panel pCard;
@@ -279,6 +323,12 @@ namespace TradingCards
         private System.Windows.Forms.Button btnShowCard1;
 
         private System.Windows.Forms.Button btnShowCard0;
+
+        private System.Windows.Forms.Button btnAction;
+
+        private System.Windows.Forms.Label lbCardOwnership;
+
+        private System.Windows.Forms.Label lbInstruction;
 
         private System.Windows.Forms.Panel pCardList;
 
