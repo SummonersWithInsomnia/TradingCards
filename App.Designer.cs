@@ -33,6 +33,7 @@ namespace TradingCards
         private void InitializeComponent()
         {
             this.pTitle = new System.Windows.Forms.Panel();
+            this.btnMyCardCollection = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
             this.pCopyright = new System.Windows.Forms.Panel();
             this.lbCopyright = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@ namespace TradingCards
             this.lbCardOwnership = new System.Windows.Forms.Label();
             this.lbInstruction = new System.Windows.Forms.Label();
             this.pCard = new System.Windows.Forms.Panel();
+            this.pTitle.SuspendLayout();
             this.pCardList.SuspendLayout();
             this.pCard.SuspendLayout();
             this.SuspendLayout();
@@ -58,10 +60,24 @@ namespace TradingCards
             // pTitle
             // 
             this.pTitle.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pTitle.Controls.Add(this.btnMyCardCollection);
             this.pTitle.Location = new System.Drawing.Point(0, 0);
             this.pTitle.Name = "pTitle";
             this.pTitle.Size = new System.Drawing.Size(966, 60);
             this.pTitle.TabIndex = 0;
+            // 
+            // btnMyCardCollection
+            // 
+            this.btnMyCardCollection.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnMyCardCollection.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnMyCardCollection.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnMyCardCollection.Location = new System.Drawing.Point(805, 9);
+            this.btnMyCardCollection.Name = "btnMyCardCollection";
+            this.btnMyCardCollection.Size = new System.Drawing.Size(149, 42);
+            this.btnMyCardCollection.TabIndex = 0;
+            this.btnMyCardCollection.Text = "My Card Collection";
+            this.btnMyCardCollection.UseVisualStyleBackColor = false;
+            this.btnMyCardCollection.Click += new System.EventHandler(this.btnMyCardCollection_Click);
             // 
             // lbTitle
             // 
@@ -71,7 +87,7 @@ namespace TradingCards
             this.lbTitle.ForeColor = System.Drawing.Color.White;
             this.lbTitle.Location = new System.Drawing.Point(360, 10);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(312, 51);
+            this.lbTitle.Size = new System.Drawing.Size(249, 41);
             this.lbTitle.TabIndex = 1;
             this.lbTitle.Text = "Trading Cards";
             // 
@@ -90,7 +106,7 @@ namespace TradingCards
             this.lbCopyright.ForeColor = System.Drawing.Color.White;
             this.lbCopyright.Location = new System.Drawing.Point(400, 590);
             this.lbCopyright.Name = "lbCopyright";
-            this.lbCopyright.Size = new System.Drawing.Size(200, 20);
+            this.lbCopyright.Size = new System.Drawing.Size(163, 15);
             this.lbCopyright.TabIndex = 3;
             this.lbCopyright.Text = "© Summoners with Insomnia";
             // 
@@ -263,7 +279,7 @@ namespace TradingCards
             this.lbInstruction.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInstruction.Location = new System.Drawing.Point(165, 227);
             this.lbInstruction.Name = "lbInstruction";
-            this.lbInstruction.Size = new System.Drawing.Size(480, 32);
+            this.lbInstruction.Size = new System.Drawing.Size(370, 25);
             this.lbInstruction.TabIndex = 0;
             this.lbInstruction.Text = "<- Please choose a card from the left bar";
             this.lbInstruction.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -294,6 +310,7 @@ namespace TradingCards
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trading Cards";
+            this.pTitle.ResumeLayout(false);
             this.pCardList.ResumeLayout(false);
             this.pCard.ResumeLayout(false);
             this.pCard.PerformLayout();
@@ -323,6 +340,8 @@ namespace TradingCards
         private System.Windows.Forms.Button btnShowCard1;
 
         private System.Windows.Forms.Button btnShowCard0;
+
+        private System.Windows.Forms.Button btnMyCardCollection;
 
         private System.Windows.Forms.Button btnAction;
 

@@ -154,5 +154,11 @@ namespace TradingCards
                 }
             }
         }
+
+        private void btnMyCardCollection_Click(object sender, EventArgs e)
+        {
+            MyCardCollection mcc = new MyCardCollection(myCardCollection);
+            mcc.ShowDialog();
+        }
     }
 }
