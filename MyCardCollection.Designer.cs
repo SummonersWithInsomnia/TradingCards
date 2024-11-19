@@ -38,13 +38,14 @@
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.Location = new System.Drawing.Point(12, 9);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(126, 20);
+            this.lbTitle.Size = new System.Drawing.Size(158, 25);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "Owned Card List";
             this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tvCards
             // 
+            this.tvCards.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvCards.Location = new System.Drawing.Point(12, 32);
             this.tvCards.Name = "tvCards";
             this.tvCards.Size = new System.Drawing.Size(321, 364);

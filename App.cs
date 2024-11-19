@@ -29,12 +29,12 @@ namespace TradingCards
                 {
                     "Michael Jordan",
                     new Player("Michael Jordan", "Chicago Bulls", "Gold", "6 NBA Championships", 200000,
-                        "1986 Fleer Rookie", 100, "player-images/player1.jpg")
+                        "1986 Fleer Rookie", 100, "player-images/player4.jpg")
                 },
                 {
                     "LeBron James",
                     new Player("LeBron James", "Los Angeles Lakers", "LightSalmon", "4 NBA Championships", 70000,
-                        "2003 Upper Deck SP Rookie", 90, "player-images/player2.jpg")
+                        "2003 Upper Deck SP Rookie", 90, "player-images/player1.jpg")
                 },
                 {
                     "Stephen Curry",
@@ -44,7 +44,7 @@ namespace TradingCards
                 {
                     "Kevin Durant",
                     new Player("Kevin Durant", "Brooklyn Nets", "LightYellow", "2 NBA Championships", 15000,
-                        "2007 Topps Chrome Rookie", 80, "player-images/player4.jpg")
+                        "2007 Topps Chrome Rookie", 80, "player-images/player8.jpg")
                 },
                 {
                     "Giannis Antetokounmpo",
@@ -59,12 +59,12 @@ namespace TradingCards
                 {
                     "Luka Dončić",
                     new Player("Luka Dončić", "Dallas Mavericks", "LightSkyBlue", "0 NBA Championships", 5000,
-                        "2018 Panini Prizm Rookie", 40, "player-images/player7.jpg")
+                        "2018 Panini Prizm Rookie", 40, "player-images/player2.jpg")
                 },
                 {
                     "Nikola Jokić",
                     new Player("Nikola Jokić", "Denver Nuggets", "LightSkyBlue", "0 NBA Championships", 4000,
-                        "Panini Prizm Silver", 50, "player-images/player8.jpg")
+                        "Panini Prizm Silver", 50, "player-images/player7.jpg")
                 },
                 {
                     "Zion Williamson",
