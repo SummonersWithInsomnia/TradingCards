@@ -19,6 +19,7 @@ namespace TradingCards
         {
             InitializeComponent();
 
+            // Players information and attributes dictionary
             playerData = new Dictionary<string, Player>
             {
                 {
@@ -73,6 +74,7 @@ namespace TradingCards
                 }
             };
 
+            //Dictionary for cards added to the collection
             myCardCollection = new Dictionary<string, bool>
             {
                 {"Kobe Bryant", false},
@@ -87,6 +89,7 @@ namespace TradingCards
                 {"Zion Williamson", false}
             };
 
+            //Events to buttons for displaying player cards
             btnShowCard0.Click += (sender, e) => ShowCard("Kobe Bryant");
             btnShowCard1.Click += (sender, e) => ShowCard("LeBron James");
             btnShowCard2.Click += (sender, e) => ShowCard("Luka Dončić");
@@ -101,14 +104,18 @@ namespace TradingCards
             btnAction.Click += btnAction_Click;
         }
         
+        //Displays the card of the specific player
+        //If player is found, PlayerCard control is created and added to the UI
+        //If not found, a message alert is prompted to the user
         private void ShowCard(string playerName)
         {
+            //Try finding the player in thhe dictionary
             if (playerData.TryGetValue(playerName, out Player player))
             {
                 PlayerCard playerCard = new PlayerCard(player);
                 playerCard.TopLevel = false;
                 playerCard.Parent = pCard;
-                playerCard.Location = new Point(100, 30);
+                playerCard.Location = new Point(100, 30); //Dock bleeding solved, need to use Location for correct positioning
 
                 pCard.Controls.Clear();
                 pCard.Controls.Add(playerCard);
@@ -135,6 +142,7 @@ namespace TradingCards
             }
         }
 
+        // Add and remove button for cards in the collection
         private void btnAction_Click(object sender, EventArgs e)
         {
             if (pCard.Controls.Contains(lbCardOwnership) && pCard.Controls.Contains(btnAction))
@@ -143,18 +151,19 @@ namespace TradingCards
                 if (myCardCollection[playerName])
                 {
                     myCardCollection[playerName] = false;
-                    lbCardOwnership.Text = "Not owned";
-                    btnAction.Text = "Add Card";
+                    lbCardOwnership.Text = "Not owned"; //Update the label text
+                    btnAction.Text = "Add Card"; //Change the button text
                 }
                 else
                 {
                     myCardCollection[playerName] = true;
-                    lbCardOwnership.Text = "Owned";
-                    btnAction.Text = "Remove Card";
+                    lbCardOwnership.Text = "Owned";  //Update the label text
+                    btnAction.Text = "Remove Card";//Change the button text
                 }
             }
         }
 
+        // Opens a new form (Collection List Form) that displays the player's current card collection
         private void btnMyCardCollection_Click(object sender, EventArgs e)
         {
             MyCardCollection mcc = new MyCardCollection(myCardCollection);
